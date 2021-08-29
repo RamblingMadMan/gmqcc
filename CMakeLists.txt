@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.4)
 
 project(gmqcc VERSION 0.0.1 LANGUAGES C CXX)
 
+set(GMQCC_MASTER_PROJECT OFF)
+if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+	set(GMQCC_MASTER_PROJECT ON)
+	message(STATUS "CMake version: ${CMAKE_VERSION}")
+endif()
+
 set(
 	GMQCCLIB_SOURCE_FILES
 	algo.h
@@ -32,9 +38,11 @@ add_executable(gmqcc main.cpp)
 set_target_properties(gmqcc PROPERTIES CXX_STANDARD 11)
 target_link_libraries(gmqcc gmqcclib)
 
-add_executable(testsuite test.cpp)
-set_target_properties(testsuite PROPERTIES CXX_STANDARD 11)
-target_link_libraries(testsuite gmqcclib)
+if(GMQCC_MASTER_PROJECT EQUAL ON)
+	add_executable(testsuite test.cpp)
+	set_target_properties(testsuite PROPERTIES CXX_STANDARD 11)
+	target_link_libraries(testsuite gmqcclib)
+endif()
 
 add_executable(qcvm exec.cpp)
 set_target_properties(qcvm PROPERTIES CXX_STANDARD 11)
