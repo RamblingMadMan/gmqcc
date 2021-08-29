@@ -5,6 +5,7 @@
 *.patch
 *.diff
 *.exe
+*.out
 
 gmqcc
 gmqpak
@@ -12,4 +13,5 @@ qcvm
 testsuite
 
 build/
+build-*/
 .idea/
