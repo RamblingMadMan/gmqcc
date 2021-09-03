@@ -1,11 +1,11 @@
 #include <string.h>
 #include <math.h>
 
-#include "fold.h"
-#include "ast.h"
-#include "ir.h"
+#include "gmqcc/fold.h"
+#include "gmqcc/ast.h"
+#include "gmqcc/ir.h"
 
-#include "parser.h"
+#include "gmqcc/parser.h"
 
 #define FOLD_STRING_UNTRANSLATE_HTSIZE 1024
 #define FOLD_STRING_DOTRANSLATE_HTSIZE 1024

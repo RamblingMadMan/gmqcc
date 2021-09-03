@@ -2,7 +2,7 @@
 #include <string.h>
 
 #include "gmqcc.h"
-#include "ir.h"
+#include "gmqcc/ir.h"
 
 /***********************************************************************
  * Type sizes used at multiple points in the IR codegen

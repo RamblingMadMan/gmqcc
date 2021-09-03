@@ -3,7 +3,7 @@
 #include <sys/stat.h>
 
 #include "gmqcc.h"
-#include "lexer.h"
+#include "gmqcc/lexer.h"
 
 #define HT_MACROS 1024
 

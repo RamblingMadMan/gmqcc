@@ -4,11 +4,11 @@
 #include <string.h>
 
 #include "gmqcc.h"
-#include "ast.h"
-#include "fold.h"
-//#include "parser.h"
+#include "gmqcc/ast.h"
+#include "gmqcc/fold.h"
+//#include "gmqcc/parser.h"
 
-#include "algo.h"
+#include "gmqcc/algo.h"
 
 /* Initialize main ast node aprts */
 ast_node::ast_node(lex_ctx_t ctx, int node_type)

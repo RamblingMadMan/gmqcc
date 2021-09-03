@@ -1,8 +1,8 @@
 #include <string.h>
 
-#include "ast.h"
-#include "fold.h"
-#include "parser.h"
+#include "gmqcc/ast.h"
+#include "gmqcc/fold.h"
+#include "gmqcc/parser.h"
 
 lex_ctx_t intrin::ctx() const {
     return parser_ctx(m_parser);

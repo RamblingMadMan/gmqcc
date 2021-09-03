@@ -6,28 +6,28 @@
 const unsigned int opts_opt_oflag[COUNT_OPTIMIZATIONS+1] = {
 # define GMQCC_TYPE_OPTIMIZATIONS
 # define GMQCC_DEFINE_FLAG(NAME, MIN_O) MIN_O,
-#  include "opts.def"
+#  include "gmqcc/opts.def"
     0
 };
 
 const opts_flag_def_t opts_opt_list[COUNT_OPTIMIZATIONS+1] = {
 # define GMQCC_TYPE_OPTIMIZATIONS
 # define GMQCC_DEFINE_FLAG(NAME, MIN_O) { #NAME, LONGBIT(OPTIM_##NAME) },
-#  include "opts.def"
+#  include "gmqcc/opts.def"
     { nullptr, LONGBIT(0) }
 };
 
 const opts_flag_def_t opts_warn_list[COUNT_WARNINGS+1] = {
 # define GMQCC_TYPE_WARNS
 # define GMQCC_DEFINE_FLAG(X) { #X, LONGBIT(WARN_##X) },
-#  include "opts.def"
+#  include "gmqcc/opts.def"
     { nullptr, LONGBIT(0) }
 };
 
 const opts_flag_def_t opts_flag_list[COUNT_FLAGS+1] = {
 # define GMQCC_TYPE_FLAGS
 # define GMQCC_DEFINE_FLAG(X) { #X, LONGBIT(X) },
-#  include "opts.def"
+#  include "gmqcc/opts.def"
     { nullptr, LONGBIT(0) }
 };
 
@@ -329,7 +329,7 @@ static char *opts_ini_load(const char *section, const char *name, const char *va
         opts_set(opts.flags, X, opts_ini_bool(value));                 \
         found = true;                                                  \
     }
-    #include "opts.def"
+    #include "gmqcc/opts.def"
 
     /* warnings */
     #define GMQCC_TYPE_WARNS
@@ -338,7 +338,7 @@ static char *opts_ini_load(const char *section, const char *name, const char *va
         opts_set(opts.warn, WARN_##X, opts_ini_bool(value));           \
         found = true;                                                  \
     }
-    #include "opts.def"
+    #include "gmqcc/opts.def"
 
     /* Werror-individuals */
     #define GMQCC_TYPE_WARNS
@@ -347,7 +347,7 @@ static char *opts_ini_load(const char *section, const char *name, const char *va
         opts_set(opts.werror, WARN_##X, opts_ini_bool(value));         \
         found = true;                                                  \
     }
-    #include "opts.def"
+    #include "gmqcc/opts.def"
 
     /* optimizations */
     #define GMQCC_TYPE_OPTIMIZATIONS
@@ -356,7 +356,7 @@ static char *opts_ini_load(const char *section, const char *name, const char *va
         opts_set(opts.optimization, OPTIM_##X, opts_ini_bool(value));  \
         found = true;                                                  \
     }
-    #include "opts.def"
+    #include "gmqcc/opts.def"
 
     /* nothing was found ever! */
     if (!found) {

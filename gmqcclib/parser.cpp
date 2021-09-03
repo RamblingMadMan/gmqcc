@@ -1,10 +1,10 @@
 #include <string.h>
 #include <math.h>
 
-#include "intrin.h"
-#include "fold.h"
-#include "ast.h"
-#include "parser.h"
+#include "gmqcc/intrin.h"
+#include "gmqcc/fold.h"
+#include "gmqcc/ast.h"
+#include "gmqcc/parser.h"
 
 #define PARSER_HT_LOCALS  2
 #define PARSER_HT_SIZE    512

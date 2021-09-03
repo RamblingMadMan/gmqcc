@@ -2,8 +2,8 @@
 #include <string.h>
 
 #include "gmqcc.h"
-#include "lexer.h"
-#include "parser.h"
+#include "gmqcc/lexer.h"
+#include "gmqcc/parser.h"
 
 /* TODO: cleanup this whole file .. it's a fuckign mess */
 

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "gmqcc.h"
-#include "lexer.h"
+#include "gmqcc/lexer.h"
 
 /*
  * List of Keywords

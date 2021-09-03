@@ -802,28 +802,28 @@ void opts_restore_non_Werror_all(void);
 enum {
 # define GMQCC_TYPE_FLAGS
 # define GMQCC_DEFINE_FLAG(X) X,
-#  include "opts.def"
+#  include "gmqcc/opts.def"
     COUNT_FLAGS
 };
 
 enum {
 # define GMQCC_TYPE_WARNS
 # define GMQCC_DEFINE_FLAG(X) WARN_##X,
-#  include "opts.def"
+#  include "gmqcc/opts.def"
     COUNT_WARNINGS
 };
 
 enum {
 # define GMQCC_TYPE_OPTIMIZATIONS
 # define GMQCC_DEFINE_FLAG(NAME, MIN_O) OPTIM_##NAME,
-#  include "opts.def"
+#  include "gmqcc/opts.def"
     COUNT_OPTIMIZATIONS
 };
 
 enum {
 #   define GMQCC_TYPE_OPTIONS
 #   define GMQCC_DEFINE_FLAG(X) OPTION_##X,
-#   include "opts.def"
+#   include "gmqcc/opts.def"
     OPTION_COUNT
 };
 
