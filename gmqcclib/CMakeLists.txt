@@ -21,6 +21,6 @@ target_include_directories(gmqcclib PUBLIC ${GMQCC_INCLUDE_DIR})
 
 set_target_properties(
 	gmqcclib PROPERTIES
-	CXX_STANDARD 11
+	CXX_STANDARD 17
 	CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions -fno-rtti"
 )
