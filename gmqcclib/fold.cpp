@@ -1514,7 +1514,7 @@ ast_expression *fold::intrinsic_exp(ast_value *a) {
 	return constgen_float(std::exp(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_exp2(ast_value *a) {
-	return constgen_float(std::expf(immvalue_float(a)), false);
+	return constgen_float(std::exp(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_expm1(ast_value *a) {
 	return constgen_float(std::expm1(immvalue_float(a)), false);
