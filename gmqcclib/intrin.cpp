@@ -1,4 +1,4 @@
-#include <string.h>
+#include <cstring>
 
 #include "gmqcc/ast.h"
 #include "gmqcc/fold.h"
@@ -1882,7 +1882,7 @@ ast_expression *intrin::log_variant(const char *name, float base) {
 }
 
 ast_expression *intrin::log_() {
-    return log_variant("log", 2.7182818284590452354);
+	return log_variant("log", 2.7182818284590452354f);
 }
 ast_expression *intrin::log10_() {
     return log_variant("log10", 10);
@@ -2013,7 +2013,7 @@ ast_expression *intrin::do_fold(ast_value *val, ast_expression **exprs) {
 ast_expression *intrin::func_try(size_t offset, const char *compare) {
     for (auto &it : m_intrinsics) {
         const size_t index = &it - &m_intrinsics[0];
-        if (strcmp(*(char **)((char *)&it + offset), compare))
+		if (std::strcmp(*(char **)((char *)&it + offset), compare))
             continue;
         if (m_generated[index])
             return m_generated[index];

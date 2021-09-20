@@ -1487,46 +1487,46 @@ ast_expression *fold::op(const oper_info *info, ast_expression **opexprs) {
  * and a generic selection function.
  */
 ast_expression *fold::intrinsic_isfinite(ast_value *a) {
-    return constgen_float(isfinite(immvalue_float(a)), false);
+	return constgen_float(std::isfinite(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_isinf(ast_value *a) {
-    return constgen_float(isinf(immvalue_float(a)), false);
+	return constgen_float(std::isinf(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_isnan(ast_value *a) {
-    return constgen_float(isnan(immvalue_float(a)), false);
+	return constgen_float(std::isnan(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_isnormal(ast_value *a) {
-    return constgen_float(isnormal(immvalue_float(a)), false);
+	return constgen_float(std::isnormal(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_signbit(ast_value *a) {
-    return constgen_float(signbit(immvalue_float(a)), false);
+	return constgen_float(std::signbit(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_acosh(ast_value *a) {
-    return constgen_float(acoshf(immvalue_float(a)), false);
+	return constgen_float(std::acoshf(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_asinh(ast_value *a) {
-    return constgen_float(asinhf(immvalue_float(a)), false);
+	return constgen_float(std::asinhf(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_atanh(ast_value *a) {
-    return constgen_float((float)atanh(immvalue_float(a)), false);
+	return constgen_float((float)std::atanh(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_exp(ast_value *a) {
-    return constgen_float(expf(immvalue_float(a)), false);
+	return constgen_float(std::expf(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_exp2(ast_value *a) {
-    return constgen_float(exp2f(immvalue_float(a)), false);
+	return constgen_float(std::exp2f(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_expm1(ast_value *a) {
-    return constgen_float(expm1f(immvalue_float(a)), false);
+	return constgen_float(std::expm1f(immvalue_float(a)), false);
 }
 ast_expression *fold::intrinsic_mod(ast_value *lhs, ast_value *rhs) {
-    return constgen_float(fmodf(immvalue_float(lhs), immvalue_float(rhs)), false);
+	return constgen_float(std::fmodf(immvalue_float(lhs), immvalue_float(rhs)), false);
 }
 ast_expression *fold::intrinsic_pow(ast_value *lhs, ast_value *rhs) {
-    return constgen_float(powf(immvalue_float(lhs), immvalue_float(rhs)), false);
+	return constgen_float(std::powf(immvalue_float(lhs), immvalue_float(rhs)), false);
 }
 ast_expression *fold::intrinsic_fabs(ast_value *a) {
-    return constgen_float(fabsf(immvalue_float(a)), false);
+	return constgen_float(std::fabsf(immvalue_float(a)), false);
 }
 ast_expression* fold::intrinsic_nan(void) {
 	return constgen_float(std::numeric_limits<float>::signaling_NaN(), false);
